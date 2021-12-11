@@ -1,0 +1,170 @@
+<div id="container" class="container-fluid" style="width: auto;height: 100vh; overflow:auto;">
+    {{#if (eq myobj.product "Books")}}
+
+        <div class="card mx-auto col-sm-7 mb-4" id="booksOutputForm">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center;"><b>Book Details Entered</b></h4>
+                <div class="form-group">
+                    <label><b>Genre: </b></label>
+                    {{myobj.genre}}
+                </div>
+                <div class="form-group">
+                    <label><b>Publisher Type: </b></label>
+                    {{myobj.publisherType}}
+                </div>
+                <div class="form-group">
+                    <label><b>Total Review: </b></label>
+                    {{myobj.totalReview}}
+                </div>
+                <div class="form-group">
+                    <label><b>Sale Price: </b></label>
+                    {{myobj.salePrice}}
+                </div>
+                <div class="form-group">
+                    <label><b>Average Rating: </b></label>
+                    {{myobj.averageRating}}
+                </div>
+                <h4 class="card-title" style="text-align: center;"><b>Predicted Average Sales = {{myobj.sales}}</b></h4>
+
+                <a href="http://localhost:4002" style="text-decoration: none; ">
+                    <div class=" d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-secondary m-2 col-md-6" id="newPredictionBtn">
+                            <b>Make New Prediction</b>
+                        </button>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+    {{/if}}
+
+    {{#if (eq myobj.product "Games")}}
+
+        <div class="card mx-auto col-sm-7 mb-4" id="gamesOutputForm">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center;"><b>Game Details Entered</b></h4>
+                <div class="form-group">
+                    <label><b>Genre: </b></label>
+                    {{myobj.genre}}
+                </div>
+                <div class="form-group">
+                    <label><b>Platform: </b></label>
+                    {{myobj.platform}}
+                </div>
+                <div class="form-group">
+                    <label><b>Critic Score: </b></label>
+                    {{myobj.criticScore}}
+                </div>
+                <div class="form-group">
+                    <label><b>Critic Count: </b></label>
+                    {{myobj.criticCount}}
+                </div>
+                <div class="form-group">
+                    <label><b>User Score: </b></label>
+                    {{myobj.userScore}}
+                </div>
+                <div class="form-group">
+                    <label><b>User Count: </b></label>
+                    {{myobj.userCount}}
+                </div>
+                <div class="form-group">
+                    <label><b>Release Year: </b></label>
+                    {{myobj.yearOfRelease}}
+                </div>
+                <div class="form-group">
+                    <label><b>Esrb Rating: </b></label>
+                    {{myobj.esrbRating}}
+                </div>
+                <h4 class="card-title" style="text-align: center;"><b>Predicted Average Sales = {{myobj.sales}}</b></h4>
+
+                <a href="http://localhost:4002" style="text-decoration: none; ">
+                    <div class=" d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-secondary m-2 col-md-6" id="newPredictionBtn">
+                            <b>Make New Prediction</b>
+                        </button>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+    {{/if}}
+
+    {{#if (eq myobj.product "Clothes")}}
+
+        <div class="card mx-auto col-sm-7 mb-4" id="clothesOutputForm">
+            <div class="card-body">
+                <h4 class="card-title" style="text-align: center;"><b>Cloth Details Entered</b></h4>
+                <div class="form-group">
+                    <label><b>Product color: </b></label>
+                    {{myobj.productColor}}
+                </div>
+                <div class="form-group">
+                    <label><b>Product Size: </b></label>
+                    {{myobj.productSize}}
+                </div>
+                <div class="form-group">
+                    <label><b>Price: </b></label>
+                    {{myobj.price}}
+                </div>
+                <div class="form-group">
+                    <label><b>Retail Price: </b></label>
+                    {{myobj.retailPrice}}
+                </div>
+                <div class="form-group">
+                    <label><b>Merchant Rating: </b></label>
+                    {{myobj.merchantRating}}
+                </div>
+                <div class="form-group">
+                    <label><b>Tag Quality: </b></label>
+                    {{myobj.tagQuality}}
+                </div>
+                <div class="form-group">
+                    <label><b>Tag Count: </b></label>
+                    {{myobj.tagCount}}
+                </div>
+                <div class="form-group">
+                    <label><b>Discount Rate: </b></label>
+                    {{myobj.discountRate}}
+                </div>
+                <div class="form-group">
+                    <label><b>Inventory Total: </b></label>
+                    {{myobj.inventoryTotal}}
+                </div>
+                <div class="form-group">
+                    <label><b>Countries Shipped To: </b></label>
+                    {{myobj.countriesShippedTo}}
+                </div>
+                <div class="form-group">
+                    <label><b>Product Variation Inventory: </b></label>
+                    {{myobj.productVariationInventory}}
+                </div>
+                <div class="form-group">
+                    <label><b>Does Product Uses Ad Boost: </b></label>
+                    {{myobj.usesAdBoost}}
+                </div>
+                <div class="form-group">
+                    <label><b>Rating: </b></label>
+                    {{myobj.rating}}
+                </div>
+
+                <h4 class="card-title" style="text-align: center;"><b>Predicted Average Sales = {{myobj.sales}}</b></h4>
+
+                <a href="http://localhost:4002" style="text-decoration: none; ">
+                    <div class=" d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-secondary m-2 col-md-6" id="newPredictionBtn">
+                            <b>Make New Prediction</b>
+                        </button>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+
+    {{/if}}
+
+</div>
+
+
+

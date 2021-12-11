@@ -1,0 +1,266 @@
+<div id="container" class="container-fluid" style="width: auto;height: 100vh; overflow:auto;">
+
+    <div class="mt-4 mb-4 mx-auto">
+        <h1 style="text-align: center; color:rgb(234 236 246)">Welcome to Sales Prediction Web App</h1>
+    </div>
+
+    <div style="height: 22vh;"></div>
+
+    <div class="card mx-auto col-sm-7" style="background:inherit; background-image:linear-gradient(rgba(240,240,240,0.8), rgba(240,240,240,0.8));">
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center; ;"><b>Select Product category</b></h4>
+            <div class="d-flex justify-content-center flex-wrap">
+                <button id="booksBtn" type="button" class="btn btn-outline-secondary m-2 col-md-3 "><b>Books</b></button>
+                <button id="clothesBtn" type="button" class="btn btn-outline-secondary m-2 col-md-3 "><b>Clothes</b></button>
+                <button id="gamesBtn" type="button" class="btn btn-outline-secondary m-2 col-md-3 "><b>Video Games</b></button>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 10vh;"></div>
+
+    <div class="card mx-auto col-sm-7 mb-4" id="booksForm" style="display: none;"> 
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;"><b>Enter Book Attributes</b></h4>
+            <form action="/predictions" method="POST">
+                <div class="form-group" style="display: none;">
+                    <input type="text" name="product" value="Books">
+                </div>
+                <div class="form-group">
+                    <label><b>Genre</b></label>
+                    <select class="custom-select" name="genre" required="true">
+                        <option selected style="display: none;">Choose Genre</option>
+                        <option>Children</option>
+                        <option>Comics</option>
+                        <option>Fiction</option>
+                        <option>Foreign Language</option>
+                        <option>Genere Fiction</option>
+                        <option>Non-fiction</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Publisher Type</b></label>
+                    <select class="custom-select" name="publisherType" required="true">
+                        <option selected style="display: none;">Choose Publisher Type</option>
+                        <option>Amazon</option>
+                        <option>Big Five</option>
+                        <option>Indian</option>
+                        <option>Single Author</option>
+                        <option>Small/ Medium</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Total Reviews</b></label>
+                    <input type="number" class="form-control" name="totalReview" placeholder="Enter total reviews" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Sale Price</b></label>
+                    <input type="number" class="form-control" name="salePrice" placeholder="Enter sale price" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Average Rating</b></label>
+                    <input type="number" step="0.01" class="form-control" name="averageRating" placeholder="Enter average rating" required="true">
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-secondary m-2 col-md-3 "><b>Make Predictions</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mx-auto col-sm-7 mb-4" id="gamesForm" style="display: none;"> 
+        {{!-- var year_of_release = 0;
+        var critic_score = 0;
+        var critic_count = 0;
+        var user_score = 0;
+        var user_count = 0;
+        var platform = 0;
+        var gen_re = 0;
+        var esrb_rating = 0; --}}
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center; "><b>Enter Game Attributes</b></h4>
+            <form action="/predictions" method="POST">
+                <div class="form-group" style="display: none;">
+                    <input type="text" name="product" value="Games">
+                </div>
+                <div class="form-group">
+                    <label><b>Genre</b></label>
+                    <select class="custom-select" name="genre" required="true">
+                        <option selected style="display: none;">Choose Genre</option>
+                        <option>Adventure</option>
+                        <option>Fighting</option>
+                        <option>Misc</option>
+                        <option>Platform</option>
+                        <option>Puzzle</option>
+                        <option>Racing</option>
+                        <option>Role-Playing</option>
+                        <option>Shooter</option>
+                        <option>Simulation</option>
+                        <option>Sports</option>
+                        <option>Strategy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Platform</b></label>
+                    <select class="custom-select" name="platform" required="true">
+                        <option selected style="display: none;">Choose Platform</option>
+                        <option>DC</option>
+                        <option>DS</option>
+                        <option>GBA</option>
+                        <option>GC</option>
+                        <option>PC</option>
+                        <option>PS</option>
+                        <option>PS2</option>
+                        <option>PS3</option>
+                        <option>PS4</option>
+                        <option>PSP</option>
+                        <option>PSV</option>
+                        <option>Wii</option>
+                        <option>WiiV</option>
+                        <option>X360</option>
+                        <option>XB</option>
+                        <option>XOne</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Critic Score</b></label>
+                    <input type="number" class="form-control" name="criticScore" placeholder="Enter critic score" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Critic Count</b></label>
+                    <input type="number" class="form-control" name="criticCount" placeholder="Enter critic count" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>User Score</b></label>
+                    <input type="number" class="form-control" name="userScore" placeholder="Enter user score" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>User Count</b></label>
+                    <input type="number" class="form-control" name="userCount" placeholder="Enter user count" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Release Year</b></label>
+                    <input type="number" class="form-control" name="yearOfRelease" placeholder="Enter release year" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Esrb Rating</b></label>
+                    <select class="custom-select" name="esrbRating" required="true">
+                        <option selected style="display: none;">Choose Esrb Rating</option>
+                        <option>E</option>
+                        <option>E10+</option>
+                        <option>K-A</option>
+                        <option>M</option>
+                        <option>RP</option>
+                        <option>T</option>
+                    </select>
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-secondary m-2 col-md-3 "><b>Make Predictions</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mx-auto col-sm-7 mb-4" id="clothesForm" style="display: none;">
+        {{!-- price ,
+        retail_price,
+        uses_ad_boost,
+        rating,
+        product_variation_inventory ,
+        countries_shipped_to,
+        inventory_total,
+        merch_rating_count,
+        merch_rating,
+        tag_quality,
+        tag_count,
+        discount_rate,
+        color,
+        size --}}
+        <div class="card-body">
+            <h4 class="card-title" style="text-align: center;"><b>Enter Cloth Attributes</b></h4>
+            <form action="/predictions" method="POST">
+                <div class="form-group" style="display: none;">
+                    <input type="text" name="product" value="Clothes">
+                </div>
+                <div class="form-group">
+                    <label><b>Product color</b></label>
+                    <select class="custom-select" name="productColor" required="true">
+                        <option selected style="display: none;">Choose Color</option>
+                        <option>Blue</option>
+                        <option>Red</option>
+                        <option>Pink</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Product Size</b></label>
+                    <select class="custom-select" name="productSize" required="true">
+                        <option selected style="display: none;">Choose Size</option>
+                        <option>XXS</option>
+                        <option>XS</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Price</b></label>
+                    <input type="number" class="form-control" name="price" placeholder="Enter price" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Retail Price</b></label>
+                    <input type="number" step="0.01" class="form-control" name="retailPrice" placeholder="Enter retail price" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Merchant Rating</b></label>
+                    <input type="number" step="0.01" class="form-control" name="merchantRating" placeholder="Enter merchant rating" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Merchant Rating Count</b></label>
+                    <input type="number" class="form-control" name="merchantRatingCount" placeholder="Enter merchant rating count" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Tag Quality</b></label>
+                    <input type="number" step="0.01" class="form-control" name="tagQuality" placeholder="Enter tag quality" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Tag Count</b></label>
+                    <input type="number" class="form-control" name="tagCount" placeholder="Enter tag count" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Discount Rate</b></label>
+                    <input type="number" step="0.01" class="form-control" name="discountRate" placeholder="Enter discount rate" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Inventory Total</b></label>
+                    <input type="number" class="form-control" name="inventoryTotal" placeholder="Enter total inventory" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Countries Shipped To</b></label>
+                    <input type="number" class="form-control" name="countriesShippedTo" placeholder="Enter countries shipped to" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Product Variation Inventory</b></label>
+                    <input type="text" class="form-control" name="productVariationInventory" placeholder="Enter Product Variation Inventory" required="true">
+                </div>
+                <div class="form-group">
+                    <label><b>Does Product Uses Ad Boost</b></label>
+                    <select class="custom-select" name="usesAdBoost" required="true">
+                        <option selected style="display: none;">Yes/No</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Rating</b></label>
+                    <input type="number" step="0.01" class="form-control" name="rating" placeholder="Enter Rating" required="true">
+                </div>
+                <div class=" d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-secondary m-2 col-md-3 "><b>Make Predictions</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
