@@ -1,0 +1,25 @@
+#container{
+    background-image: linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),url("../bg3.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+#booksOutputForm{
+  margin-top: 14vh;
+  background : inherit;
+  background-image: linear-gradient(rgba(240,240,240,0.8), rgba(240,240,240,0.8));
+}
+
+#gamesOutputForm{
+  margin-top: 1.5vh;
+  background : inherit;
+  background-image: linear-gradient(rgba(240,240,240,0.8), rgba(240,240,240,0.8));
+}
+
+#clothesOutputForm{
+  margin-top: 6vh;
+  background : inherit;
+  background-image: linear-gradient(rgba(240,240,240,0.8), rgba(240,240,240,0.8));
+}
